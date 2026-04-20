@@ -41,10 +41,10 @@ export function FAQ() {
     <section id="faq" className="py-20 sm:py-24">
       <SectionReveal className="space-y-8">
         <div className="space-y-3">
-          <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+          <p className="text-xs font-semibold tracking-[0.2em] text-[var(--color-highlight)] uppercase sm:text-sm">
             Have Questions?
           </p>
-          <h2 className="text-2xl leading-tight font-semibold text-white sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl leading-tight font-semibold text-foreground sm:text-3xl lg:text-4xl">
             Frequently Asked Questions
           </h2>
         </div>
@@ -54,9 +54,9 @@ export function FAQ() {
               <AccordionItem
                 key={topic.question}
                 value={topic.question}
-                className="overflow-hidden rounded-xl border-0 bg-[#241045]/85"
+                className="overflow-hidden rounded-xl border border-border bg-card"
               >
-                <AccordionTrigger className="px-6 py-5 text-base font-semibold text-white hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden group-aria-expanded/accordion-trigger:bg-[#C6EC63] group-aria-expanded/accordion-trigger:text-[#170C2D]">
+                <AccordionTrigger className="px-6 py-5 text-base font-semibold text-foreground hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden group-aria-expanded/accordion-trigger:bg-[var(--color-highlight)] group-aria-expanded/accordion-trigger:text-[var(--color-bg)]">
                   <span className="flex w-full items-center justify-between gap-4">
                     <span>{topic.question}</span>
                     <span className="text-3xl leading-none group-aria-expanded/accordion-trigger:hidden">
@@ -67,7 +67,7 @@ export function FAQ() {
                     </span>
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="border-t border-[#FFFFFF14] bg-[#2A1450] px-6 pb-6 text-base leading-relaxed text-[#D2CFD7]">
+                <AccordionContent className="border-t border-border bg-secondary px-6 pb-6 text-base leading-relaxed text-muted-foreground">
                   {topic.answer}
                 </AccordionContent>
               </AccordionItem>

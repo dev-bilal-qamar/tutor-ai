@@ -60,10 +60,10 @@ export function Features() {
     <section id="features" className="py-20 sm:py-24">
       <SectionReveal className="space-y-10">
         <div className="space-y-4 text-center">
-          <h2 className="text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl leading-tight font-semibold text-foreground sm:text-4xl lg:text-5xl">
             Everything You Need. Nothing You Don&apos;t.
           </h2>
-          <p className="mx-auto max-w-3xl text-base text-[#D2CFD7] sm:text-lg">
+          <p className="mx-auto max-w-3xl text-base text-muted-foreground sm:text-lg">
             One subscription. Every tool you need to go from revision to
             results.
           </p>
@@ -76,13 +76,13 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" }}
-              className="group h-full rounded-2xl border border-[#FFFFFF1C] bg-[#1E0E38]/70 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-1 hover:border-[#8B5CD6] hover:shadow-[0_16px_45px_rgba(139,92,214,0.28)]"
+              className="group h-full rounded-2xl border border-border bg-card/85 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.12)] transition-all duration-200 hover:-translate-y-1 hover:border-[#8B5CD6] hover:shadow-[0_16px_45px_rgba(139,92,214,0.22)]"
             >
-              <div className="inline-flex size-11 items-center justify-center rounded-xl border border-[#FFFFFF1C] bg-[#0F071C]/50 text-[#CDF660]">
+              <div className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-secondary text-[var(--color-highlight)]">
                 <item.icon className="size-5" />
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-white">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#D2CFD7] sm:text-base">
+              <h3 className="mt-4 text-xl font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
                 {item.description}
               </p>
             </motion.div>

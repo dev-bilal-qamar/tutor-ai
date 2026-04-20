@@ -15,7 +15,7 @@ export function About() {
       <SectionReveal>
         <div className="grid items-center gap-8 lg:grid-cols-[0.92fr_1fr] lg:gap-14">
           <div className="relative mx-auto w-full max-w-lg">
-            <div className="relative overflow-hidden rounded-[16px] border border-[#FFFFFF1C] bg-[#140A28] shadow-[0_20px_45px_rgba(0,0,0,0.32)]">
+            <div className="relative overflow-hidden rounded-[16px] border border-border bg-card shadow-[0_20px_45px_rgba(0,0,0,0.18)]">
               <Image
                 src="/about.png"
                 alt="About BoostTutorAI section visual"
@@ -46,14 +46,14 @@ export function About() {
           </div>
 
           <div className="text-left">
-            <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[var(--color-highlight)] uppercase sm:text-sm">
               About BoostTutorAI
             </p>
-            <h2 className="mt-4 max-w-2xl text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 max-w-2xl text-3xl leading-tight font-semibold text-foreground sm:text-4xl lg:text-5xl">
               Master Any Exam Question in Seconds.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#D2CFD7] sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
               Traditional tutoring is slow and expensive. BoostTutorAI provides
               instant stepby-step solutions for Maths, Physics, Biology, and
               Chemistry aligned with UK exam boards.

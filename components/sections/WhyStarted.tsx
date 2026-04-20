@@ -23,7 +23,7 @@ export function WhyStarted() {
       <SectionReveal className="space-y-8">
         <div className="mx-auto w-full max-w-8xl">
           <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:items-center lg:gap-12">
-            <div className="overflow-hidden rounded-2xl border border-[#FFFFFF1C] bg-[#1E0E38]/60">
+            <div className="overflow-hidden rounded-2xl border border-border bg-card/80">
               <div className="relative aspect-4/3 w-full">
                 <img
                   src="https://kit.holylinedesign.com/cerdas/wp-content/uploads/sites/27/2025/03/young-serious-female-programmer-or-developer-in-fo-KG33VXG.jpg"
@@ -36,13 +36,13 @@ export function WhyStarted() {
             </div>
 
             <div className="space-y-5">
-              <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+              <p className="text-xs font-semibold tracking-[0.2em] text-[var(--color-highlight)] uppercase sm:text-sm">
                 WHY BOOSTTUTORAI?
               </p>
-              <h2 className="text-2xl leading-tight font-semibold text-white sm:text-3xl lg:text-4xl">
+              <h2 className="text-2xl leading-tight font-semibold text-foreground sm:text-3xl lg:text-4xl">
                 Your Private Tutor, Without the Price Tag or the Wait.
               </h2>
-              <p className="text-sm leading-relaxed text-[#D2CFD7] sm:text-base">
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Stop wasting hours staring at the same textbook. BoostTutorAI
                 provides personalized, 24/7 support that understands the UK
                 curriculum better than a standard textbook. We break down the
@@ -53,7 +53,7 @@ export function WhyStarted() {
               <div className="grid gap-3 pt-1 sm:grid-cols-2 sm:gap-4">
                 <ul className="space-y-3">
                   {leftFeaturePoints.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-[#D2CFD7]">
+                    <li key={point} className="flex items-start gap-3 text-muted-foreground">
                       <Check className="mt-0.5 size-4 shrink-0 text-[#CDF660]" />
                       <span className="text-sm leading-relaxed">{point}</span>
                     </li>
@@ -61,7 +61,7 @@ export function WhyStarted() {
                 </ul>
                 <ul className="space-y-3">
                   {rightFeaturePoints.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-[#D2CFD7]">
+                    <li key={point} className="flex items-start gap-3 text-muted-foreground">
                       <Check className="mt-0.5 size-4 shrink-0 text-[#CDF660]" />
                       <span className="text-sm leading-relaxed">{point}</span>
                     </li>

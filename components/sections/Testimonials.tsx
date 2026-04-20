@@ -34,10 +34,10 @@ export function Testimonials() {
       <SectionReveal>
         <div className="grid gap-8 md:grid-cols-[0.9fr_1.7fr] md:items-start lg:gap-10">
           <div className="space-y-6">
-            <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[var(--color-highlight)] uppercase sm:text-sm">
               Testimonials
             </p>
-            <h2 className="max-w-md text-2xl leading-tight font-semibold text-white sm:text-3xl lg:text-4xl">
+            <h2 className="max-w-md text-2xl leading-tight font-semibold text-foreground sm:text-3xl lg:text-4xl">
               What Our Students Say
             </h2>
             <button

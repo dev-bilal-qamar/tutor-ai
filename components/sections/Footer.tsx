@@ -15,15 +15,15 @@ export function Footer() {
       id="footer"
       className="relative left-1/2 w-screen -translate-x-1/2 "
     >
-      <SectionReveal className="border-y border-[#FFFFFF1C] bg-[#1A0D32]/65">
+      <SectionReveal className="border-y border-border bg-card/90">
         <div className="mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 sm:py-10">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <div className="flex items-center gap-1">
                 <Image src="/logo.png" alt="App logo" width={46} height={46} />
-                <p className="text-xl font-semibold text-white">BoostTutorAI</p>
+                <p className="text-xl font-semibold text-foreground">BoostTutorAI</p>
               </div>
-              <p className="mt-4 text-sm text-[#D2CFD7]">
+              <p className="mt-4 text-sm text-muted-foreground">
                 AI Tutoring Built for UK Exams
               </p>
               <div className="mt-5 flex items-center gap-2">
@@ -46,7 +46,7 @@ export function Footer() {
             <FooterColumn title="Legal" items={legal} />
           </div>
 
-          <div className="mt-10 border-t border-[#FFFFFF1C] pt-5 text-xs text-[#8E869B] sm:flex sm:items-center sm:justify-between">
+          <div className="mt-10 border-t border-border pt-5 text-xs text-muted-foreground sm:flex sm:items-center sm:justify-between">
             <p>
               © {new Date().getFullYear()} BoostTutorAI. All rights reserved.
             </p>
@@ -68,10 +68,10 @@ type FooterColumnProps = {
 function FooterColumn({ title, items }: FooterColumnProps) {
   return (
     <div>
-      <p className="text-sm font-semibold tracking-[0.12em] text-[#CDF660] uppercase">
+      <p className="text-sm font-semibold tracking-[0.12em] text-[var(--color-highlight)] uppercase">
         {title}
       </p>
-      <ul className="mt-4 space-y-3 text-sm text-[#D2CFD7]">
+      <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
@@ -90,7 +90,7 @@ function SocialIcon({ icon, label }: SocialIconProps) {
     <button
       type="button"
       aria-label={label}
-      className="inline-flex size-9 items-center justify-center rounded-lg border border-[#FFFFFF1C] bg-[#0F071C]/70 text-[#D2CFD7] transition-colors duration-200 hover:bg-[#8B5CD6] hover:text-white"
+      className="inline-flex size-9 items-center justify-center rounded-lg border border-border bg-secondary text-muted-foreground transition-colors duration-200 hover:bg-[#8B5CD6] hover:text-white"
     >
       {icon}
     </button>

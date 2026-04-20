@@ -32,26 +32,26 @@ export function HowItWorks() {
     <section id="how-it-works" className="py-20 sm:py-24">
       <SectionReveal className="space-y-10">
         <div className="space-y-4 text-center">
-          <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+          <p className="text-xs font-semibold tracking-[0.2em] text-[var(--color-highlight)] uppercase sm:text-sm">
             How It Works
           </p>
-          <h2 className="text-2xl leading-tight font-semibold text-white sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl leading-tight font-semibold text-foreground sm:text-3xl lg:text-4xl">
             Master Any Exam Question in 3 Steps
           </h2>
         </div>
 
-        <div className="relative overflow-hidden rounded-[28px] border border-[#FFFFFF1C] bg-[#1E0E38]/70 p-6 sm:p-8 lg:p-10">
+        <div className="relative overflow-hidden rounded-[28px] border border-border bg-card/80 p-6 sm:p-8 lg:p-10">
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[40%] rounded-l-[120px] bg-[radial-gradient(circle_at_center,rgba(120,65,220,0.45),rgba(30,14,56,0))] lg:block" />
           <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
             <div>
               <div className="mb-6">
-                <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+                <p className="text-xs font-semibold tracking-[0.2em] text-[var(--color-highlight)] uppercase sm:text-sm">
                   The BoostTutorAI Flow
                 </p>
-                <h3 className="mt-3 text-2xl leading-tight font-semibold text-white sm:text-3xl lg:text-4xl">
+                <h3 className="mt-3 text-2xl leading-tight font-semibold text-foreground sm:text-3xl lg:text-4xl">
                   From &apos;Stuck&apos; to Solved
                 </h3>
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-[#D2CFD7] sm:text-base">
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
                   Don&apos;t let a difficult question ruin your revision. Our AI is
                   designed to decode, solve, and teach you the logic behind every
                   problem instantly.
@@ -71,7 +71,7 @@ export function HowItWorks() {
                     }}
                     className="sm:col-span-1"
                   >
-                    <p className="flex items-center gap-2 text-base font-semibold leading-none text-white">
+                    <p className="flex items-center gap-2 text-base font-semibold leading-none text-foreground">
                       <Check className="size-5 shrink-0 text-[#C9FF54]" />
                       {step.title}
                     </p>
@@ -92,9 +92,9 @@ export function HowItWorks() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
-              className="relative overflow-hidden rounded-2xl border border-[#FFFFFF24] bg-black/40"
+              className="relative overflow-hidden rounded-2xl border border-border bg-black/30"
             >
-              <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-[#FFFFFF1C] bg-[#1E0E38]/70">
+              <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-border bg-card/80">
                 <div className="relative aspect-video w-full">
                   {!isPlaying && (
                     <button

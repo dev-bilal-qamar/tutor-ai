@@ -137,13 +137,13 @@ export function Hero() {
       >
         <div className="mx-auto grid w-full max-w-[1280px] items-center gap-8 lg:grid-cols-[1fr_0.9fr] lg:gap-10 lg:px-4">
           <div className="text-left">
-            <p className="inline-flex rounded-full border border-[#FFFFFF1C] bg-[#1E0E38]/80 px-4 py-2 text-xs font-medium tracking-widest text-[#D2CFD7] uppercase sm:text-sm">
+            <p className="inline-flex rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-medium tracking-widest text-muted-foreground uppercase sm:text-sm">
               AI Exam Prep System
             </p>
-            <h1 className="mt-6 max-w-xl text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
+            <h1 className="mt-6 max-w-xl text-3xl leading-tight font-semibold text-foreground sm:text-4xl lg:text-5xl">
               Master Your Exams. Solved in Seconds.
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-8 text-[#D2CFD7] sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">
               Instant, verified solutions for AQA, Edexcel, and more. Upload your
               problem and get immediate working, detailed explanations, and
               unlimited AI-generated variants.
@@ -157,16 +157,16 @@ export function Hero() {
               {leftBottomCards.map((card) => (
                 <div
                   key={card.title}
-                  className="rounded-2xl border border-[#FFFFFF1C] bg-[#1E0E38]/65 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.24)]"
+                  className="rounded-2xl border border-border bg-card/80 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.16)]"
                 >
-                  <p className="text-xs font-semibold tracking-[0.08em] text-[#CDF660] uppercase">
+                  <p className="text-xs font-semibold tracking-[0.08em] text-[var(--color-highlight)] uppercase">
                     {card.title}
                   </p>
-                  <p className="mt-2 text-base font-semibold text-white sm:text-lg">
+                  <p className="mt-2 text-base font-semibold text-foreground sm:text-lg">
                     {card.description}
                   </p>
                   {"helperText" in card ? (
-                    <p className="mt-2 text-sm leading-6 text-[#D2CFD7]">
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
                       {card.helperText}
                     </p>
                   ) : null}

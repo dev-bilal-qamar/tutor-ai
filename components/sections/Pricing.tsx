@@ -61,22 +61,22 @@ export function Pricing() {
     <section id="pricing" className="py-20 sm:py-24">
       <SectionReveal className="space-y-10">
         <div className="space-y-4 text-center">
-          <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+          <p className="text-xs font-semibold tracking-[0.2em] text-[var(--color-highlight)] uppercase sm:text-sm">
             Pricing
           </p>
-          <h2 className="text-2xl leading-tight font-semibold text-white sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl leading-tight font-semibold text-foreground sm:text-3xl lg:text-4xl">
             Choose the Plan That Guarantees Your Grade.
           </h2>
         </div>
 
         <div className="flex justify-center">
-          <div className="inline-flex rounded-xl border border-[#FFFFFF1C] bg-[#1E0E38]/80 p-1">
+          <div className="inline-flex rounded-xl border border-border bg-card p-1">
             <button
               type="button"
               onClick={() => setBillingMode("monthly")}
               className={`rounded-lg px-5 py-2 text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-200 ${billingMode === "monthly"
                 ? "bg-[var(--color-accent)] text-[var(--color-primary)]"
-                : "text-[#D2CFD7] hover:text-white"
+                : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               Monthly
@@ -86,7 +86,7 @@ export function Pricing() {
               onClick={() => setBillingMode("yearly")}
               className={`rounded-lg px-5 py-2 text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-200 ${billingMode === "yearly"
                 ? "bg-[var(--color-accent)] text-[var(--color-primary)]"
-                : "text-[#D2CFD7] hover:text-white"
+                : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               Yearly
@@ -107,33 +107,33 @@ export function Pricing() {
             >
               <div
                 className={`flex h-full flex-col rounded-2xl border p-6 sm:p-7 ${plan.featured
-                  ? "border-[#8B5CD6] bg-gradient-to-b from-[#1E0E38] to-[#130927] shadow-[0_16px_50px_rgba(139,92,214,0.34)]"
-                  : "border-[#FFFFFF1C] bg-[#1E0E38]/70"
+                  ? "border-[#8B5CD6] bg-card shadow-[0_16px_50px_rgba(139,92,214,0.25)]"
+                  : "border-border bg-card/80"
                   } transition-shadow duration-200 hover:shadow-[0_22px_60px_rgba(139,92,214,0.30)]`}
               >
                 <div className="min-h-[170px]">
-                  <p className="inline-flex rounded-full border border-[#FFFFFF1C] bg-[#0F071C]/70 px-3 py-1 text-xs font-medium text-[#CDF660]">
+                  <p className="inline-flex rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-[var(--color-highlight)]">
                     {plan.badge}
                   </p>
-                  <p className="mt-5 text-2xl leading-tight font-semibold text-white sm:text-3xl">
+                  <p className="mt-5 text-2xl leading-tight font-semibold text-foreground sm:text-3xl">
                     {plan.name}
                   </p>
-                  <p className="mt-3 text-4xl leading-none font-semibold text-white sm:text-5xl">
+                  <p className="mt-3 text-4xl leading-none font-semibold text-foreground sm:text-5xl">
                     {billingMode === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
-                    <span className="text-lg text-[#D2CFD7]">
+                    <span className="text-lg text-muted-foreground">
                       /{billingMode === "monthly" ? "month" : "month"}
                     </span>
                   </p>
-                  <p className="mt-3 text-sm text-[#D2CFD7]">
+                  <p className="mt-3 text-sm text-muted-foreground">
                     {billingMode === "monthly"
                       ? plan.billingMonthly
                       : plan.billingYearly}
                   </p>
                 </div>
 
-                <ul className="mt-4 space-y-3 border-t border-[#FFFFFF1C] pt-5">
+                <ul className="mt-4 space-y-3 border-t border-border pt-5">
                   {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-[#D2CFD7]">
+                    <li key={feature} className="flex items-start gap-3 text-muted-foreground">
                       <Check className="mt-0.5 size-4 text-[#CDF660]" />
                       <span className="text-sm sm:text-base">{feature}</span>
                     </li>
@@ -154,7 +154,7 @@ export function Pricing() {
                 <Button className="btn-primary-gradient mt-7 h-11 w-full rounded-xl text-xs font-semibold tracking-[0.13em] uppercase">
                   Start for Free
                 </Button>
-                <p className="mt-3 text-center text-xs text-[#8E869B]">
+                <p className="mt-3 text-center text-xs text-muted-foreground">
                   No credit card required
                 </p>
               </div>
