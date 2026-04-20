@@ -49,23 +49,110 @@
 }
 
 :root {
-  --font-heading: "Sundry", "Sundry Fallback", var(--font-orbitron), sans-serif;
+  --e-global-color-primary: #ffffff;
+  --e-global-color-secondary: #e8e7eb;
+  --e-global-color-text: #d2cfd7;
+  --e-global-color-accent: #8b5cd6;
+  --e-global-color-da0ee6c: #5e2caf;
+  --e-global-color-b3d5f12: #cdf660;
+  --e-global-color-6c68f20: #8e869b;
+  --e-global-color-9c213e5: #2c1553;
+  --e-global-color-fc2a241: #00000000;
+  --e-global-color-3e4952b: #1e0e38;
+  --e-global-color-289833d: #0f071c;
+  --e-global-color-75d717f: #ffffff1c;
+
+  --e-global-typography-primary-font-family: "Orbitron";
+  --e-global-typography-primary-font-size: 67px;
+  --e-global-typography-primary-font-weight: 600;
+  --e-global-typography-primary-text-transform: none;
+  --e-global-typography-primary-font-style: normal;
+  --e-global-typography-primary-line-height: 1.2em;
+  --e-global-typography-secondary-font-family: "Orbitron";
+  --e-global-typography-secondary-font-size: 14px;
+  --e-global-typography-secondary-font-weight: 500;
+  --e-global-typography-secondary-text-transform: uppercase;
+  --e-global-typography-secondary-font-style: normal;
+  --e-global-typography-secondary-letter-spacing: 2px;
+  --e-global-typography-text-font-family: "Inter";
+  --e-global-typography-text-font-size: 16px;
+  --e-global-typography-text-font-weight: 400;
+  --e-global-typography-text-text-transform: none;
+  --e-global-typography-text-font-style: normal;
+  --e-global-typography-text-line-height: 1.5em;
+  --e-global-typography-accent-font-family: "Orbitron";
+  --e-global-typography-accent-font-size: 13px;
+  --e-global-typography-accent-font-weight: 500;
+  --e-global-typography-accent-text-transform: uppercase;
+  --e-global-typography-accent-font-style: normal;
+  --e-global-typography-accent-text-decoration: none;
+  --e-global-typography-accent-letter-spacing: 1px;
+  --e-global-typography-fe052c1-font-family: "Inter";
+  --e-global-typography-fe052c1-font-size: 22px;
+  --e-global-typography-fe052c1-font-weight: 400;
+  --e-global-typography-fe052c1-text-transform: none;
+  --e-global-typography-fe052c1-font-style: normal;
+  --e-global-typography-fe052c1-line-height: 1.5em;
+  --e-global-typography-7c30d89-font-family: "Inter";
+  --e-global-typography-7c30d89-font-size: 14px;
+  --e-global-typography-7c30d89-font-weight: 400;
+  --e-global-typography-7c30d89-text-transform: none;
+  --e-global-typography-7c30d89-font-style: normal;
+  --e-global-typography-7c30d89-line-height: 1.5em;
+  --e-global-typography-533077a-font-family: "Orbitron";
+  --e-global-typography-533077a-font-size: 48px;
+  --e-global-typography-533077a-font-weight: 600;
+  --e-global-typography-533077a-text-transform: none;
+  --e-global-typography-533077a-font-style: normal;
+  --e-global-typography-533077a-line-height: 1.2em;
+  --e-global-typography-04159a5-font-family: "Orbitron";
+  --e-global-typography-04159a5-font-size: 38px;
+  --e-global-typography-04159a5-font-weight: 600;
+  --e-global-typography-04159a5-text-transform: none;
+  --e-global-typography-04159a5-font-style: normal;
+  --e-global-typography-04159a5-line-height: 1.2em;
+  --e-global-typography-5660cc0-font-family: "Orbitron";
+  --e-global-typography-5660cc0-font-size: 30px;
+  --e-global-typography-5660cc0-font-weight: 600;
+  --e-global-typography-5660cc0-text-transform: none;
+  --e-global-typography-5660cc0-font-style: normal;
+  --e-global-typography-5660cc0-line-height: 1.2em;
+  --e-global-typography-124b108-font-family: "Orbitron";
+  --e-global-typography-124b108-font-size: 24px;
+  --e-global-typography-124b108-font-weight: 600;
+  --e-global-typography-124b108-text-transform: none;
+  --e-global-typography-124b108-font-style: normal;
+  --e-global-typography-124b108-line-height: 1.2em;
+  --e-global-typography-b9d21df-font-family: "Orbitron";
+  --e-global-typography-b9d21df-font-size: 16px;
+  --e-global-typography-b9d21df-font-weight: 600;
+  --e-global-typography-b9d21df-text-transform: none;
+  --e-global-typography-b9d21df-font-style: normal;
+  --e-global-typography-b9d21df-line-height: 1.2em;
+  --e-global-typography-5bbe31e-font-family: "Orbitron";
+  --e-global-typography-5bbe31e-font-size: 14px;
+  --e-global-typography-5bbe31e-font-weight: 500;
+  --e-global-typography-5bbe31e-text-transform: capitalize;
+  --e-global-typography-5bbe31e-font-style: normal;
+  --e-global-typography-5bbe31e-letter-spacing: 1px;
+
+  --font-heading: var(--font-orbitron), sans-serif;
   --font-secondary: var(--font-orbitron), sans-serif;
   --font-body: var(--font-inter), sans-serif;
   --font-accent: var(--font-orbitron), sans-serif;
 
-  --color-primary: #ffffff;
-  --color-secondary: #e8e7eb;
-  --color-text: #d2cfd7;
-  --color-accent: #8b5cd6;
-  --color-accent-dark: #5e2caf;
-  --color-highlight: #cdf660;
-  --color-muted-text: #8e869b;
-  --color-dark-accent: #2c1553;
-  --color-surface-dark: #1e0e38;
-  --color-bg: #0f071c;
-  --color-glass-border: #ffffff1c;
-  --color-transparent: #00000000;
+  --color-primary: var(--e-global-color-primary);
+  --color-secondary: var(--e-global-color-secondary);
+  --color-text: var(--e-global-color-text);
+  --color-accent: var(--e-global-color-accent);
+  --color-accent-dark: var(--e-global-color-da0ee6c);
+  --color-highlight: var(--e-global-color-b3d5f12);
+  --color-muted-text: var(--e-global-color-6c68f20);
+  --color-dark-accent: var(--e-global-color-9c213e5);
+  --color-surface-dark: var(--e-global-color-3e4952b);
+  --color-bg: var(--e-global-color-289833d);
+  --color-glass-border: var(--e-global-color-75d717f);
+  --color-transparent: var(--e-global-color-fc2a241);
 
   --background: #0f071c;
   --foreground: #ffffff;
@@ -119,33 +206,34 @@
   h5,
   h6 {
     font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.2;
+    font-weight: var(--e-global-typography-primary-font-weight);
+    line-height: var(--e-global-typography-primary-line-height);
   }
   h1 {
-    font-size: clamp(2.6rem, 5.4vw, 67px);
+    font-size: clamp(2.6rem, 5.4vw, var(--e-global-typography-primary-font-size));
   }
   p {
     font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
+    font-weight: var(--e-global-typography-text-font-weight);
+    font-size: var(--e-global-typography-text-font-size);
+    line-height: var(--e-global-typography-text-line-height);
   }
 }
 
 .text-meta-label {
   font-family: var(--font-secondary);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-weight: var(--e-global-typography-secondary-font-weight);
+  font-size: var(--e-global-typography-secondary-font-size);
+  letter-spacing: var(--e-global-typography-secondary-letter-spacing);
+  text-transform: var(--e-global-typography-secondary-text-transform);
 }
 
 .text-accent-ui {
   font-family: var(--font-accent);
-  font-weight: 500;
-  font-size: 13px;
-  text-transform: uppercase;
+  font-weight: var(--e-global-typography-accent-font-weight);
+  font-size: var(--e-global-typography-accent-font-size);
+  letter-spacing: var(--e-global-typography-accent-letter-spacing);
+  text-transform: var(--e-global-typography-accent-text-transform);
 }
 
 @keyframes marquee-left-to-right {
@@ -199,4 +287,13 @@
     var(--color-dark-accent) 45%,
     var(--color-surface-dark) 100%
   );
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

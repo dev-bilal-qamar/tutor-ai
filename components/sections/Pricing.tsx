@@ -61,13 +61,12 @@ export function Pricing() {
     <section id="pricing" className="py-20 sm:py-24">
       <SectionReveal className="space-y-10">
         <div className="space-y-4 text-center">
-          <h2 className="text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
-            A Fraction of the Cost of Private Tutoring
-          </h2>
-          <p className="mx-auto max-w-3xl text-base text-[#D2CFD7] sm:text-lg">
-            Private tutors charge £96/month on average. We think that&apos;s too
-            much.
+          <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+            Pricing
           </p>
+          <h2 className="text-2xl leading-tight font-semibold text-white sm:text-3xl lg:text-4xl">
+            Choose the Plan That Guarantees Your Grade.
+          </h2>
         </div>
 
         <div className="flex justify-center">
@@ -75,22 +74,20 @@ export function Pricing() {
             <button
               type="button"
               onClick={() => setBillingMode("monthly")}
-              className={`rounded-lg px-5 py-2 text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-200 ${
-                billingMode === "monthly"
-                  ? "bg-[var(--color-accent)] text-[var(--color-primary)]"
-                  : "text-[#D2CFD7] hover:text-white"
-              }`}
+              className={`rounded-lg px-5 py-2 text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-200 ${billingMode === "monthly"
+                ? "bg-[var(--color-accent)] text-[var(--color-primary)]"
+                : "text-[#D2CFD7] hover:text-white"
+                }`}
             >
               Monthly
             </button>
             <button
               type="button"
               onClick={() => setBillingMode("yearly")}
-              className={`rounded-lg px-5 py-2 text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-200 ${
-                billingMode === "yearly"
-                  ? "bg-[var(--color-accent)] text-[var(--color-primary)]"
-                  : "text-[#D2CFD7] hover:text-white"
-              }`}
+              className={`rounded-lg px-5 py-2 text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-200 ${billingMode === "yearly"
+                ? "bg-[var(--color-accent)] text-[var(--color-primary)]"
+                : "text-[#D2CFD7] hover:text-white"
+                }`}
             >
               Yearly
             </button>
@@ -109,11 +106,10 @@ export function Pricing() {
               className="h-full"
             >
               <div
-                className={`flex h-full flex-col rounded-2xl border p-6 sm:p-7 ${
-                  plan.featured
-                    ? "border-[#8B5CD6] bg-gradient-to-b from-[#1E0E38] to-[#130927] shadow-[0_16px_50px_rgba(139,92,214,0.34)]"
-                    : "border-[#FFFFFF1C] bg-[#1E0E38]/70"
-                } transition-shadow duration-200 hover:shadow-[0_22px_60px_rgba(139,92,214,0.30)]`}
+                className={`flex h-full flex-col rounded-2xl border p-6 sm:p-7 ${plan.featured
+                  ? "border-[#8B5CD6] bg-gradient-to-b from-[#1E0E38] to-[#130927] shadow-[0_16px_50px_rgba(139,92,214,0.34)]"
+                  : "border-[#FFFFFF1C] bg-[#1E0E38]/70"
+                  } transition-shadow duration-200 hover:shadow-[0_22px_60px_rgba(139,92,214,0.30)]`}
               >
                 <div className="min-h-[170px]">
                   <p className="inline-flex rounded-full border border-[#FFFFFF1C] bg-[#0F071C]/70 px-3 py-1 text-xs font-medium text-[#CDF660]">

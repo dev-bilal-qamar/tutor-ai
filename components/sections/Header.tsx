@@ -51,8 +51,7 @@ export function Header() {
   }, []);
 
   const navClass = (id: string) =>
-    `relative whitespace-nowrap pb-1 text-sm transition-colors duration-200 ${
-      activeId === id ? "text-white" : "text-[#D2CFD7] hover:text-white"
+    `relative whitespace-nowrap pb-1 text-sm transition-colors duration-200 ${activeId === id ? "text-white" : "text-[#D2CFD7] hover:text-white"
     }`;
 
   const handleSectionClick = (
@@ -76,11 +75,10 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-all duration-200 ${
-        isScrolled
-          ? "border-[#FFFFFF1C] bg-[#0F071C]/85 backdrop-blur-xl"
-          : "border-transparent bg-[#0F071C]/60 backdrop-blur-md"
-      }`}
+      className={`sticky top-0 z-50 border-b transition-all duration-200 ${isScrolled
+        ? "border-[#FFFFFF1C] bg-[#0F071C]/85 backdrop-blur-xl"
+        : "border-transparent bg-[#0F071C]/60 backdrop-blur-md"
+        }`}
     >
       <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 py-4">
         <Link
@@ -104,9 +102,8 @@ export function Header() {
             >
               {item.label}
               <span
-                className={`absolute bottom-0 left-0 h-0.5 w-full origin-left rounded-full bg-[#8B5CD6] transition-transform duration-200 ${
-                  activeId === item.id ? "scale-x-100" : "scale-x-0"
-                }`}
+                className={`absolute bottom-0 left-0 h-0.5 w-full origin-left rounded-full bg-[#8B5CD6] transition-transform duration-200 ${activeId === item.id ? "scale-x-100" : "scale-x-0"
+                  }`}
               />
             </Link>
           ))}
@@ -135,9 +132,8 @@ export function Header() {
       </div>
 
       <div
-        className={`overflow-hidden border-t border-[#FFFFFF1C] bg-[#130926] transition-[max-height,opacity] duration-200 lg:hidden ${
-          menuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`overflow-hidden border-t border-[#FFFFFF1C] bg-[#130926] transition-[max-height,opacity] duration-200 lg:hidden ${menuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <nav className="mx-auto flex w-full max-w-[1280px] flex-col gap-1 px-4 py-4">
           {navItems.map((item) => (
@@ -145,11 +141,10 @@ export function Header() {
               key={item.id}
               href={item.href}
               onClick={(event) => handleSectionClick(event, item.id)}
-              className={`rounded-xl px-3 py-2.5 text-sm transition-colors duration-200 ${
-                activeId === item.id
-                  ? "bg-[#1E0E38] text-white"
-                  : "text-[#D2CFD7] hover:bg-[#1E0E38] hover:text-white"
-              }`}
+              className={`rounded-xl px-3 py-2.5 text-sm transition-colors duration-200 ${activeId === item.id
+                ? "bg-[#1E0E38] text-white"
+                : "text-[#D2CFD7] hover:bg-[#1E0E38] hover:text-white"
+                }`}
             >
               {item.label}
             </Link>

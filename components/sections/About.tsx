@@ -1,114 +1,70 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { SectionReveal } from "@/components/sections/SectionReveal";
+import { Button } from "@/components/ui/button";
 
-const stats = [
-  { end: 10000, suffix: "+", label: "Students Using the App", format: "comma" },
-  { end: 5, suffix: "+", label: "UK Exam Boards Covered", format: "plain" },
-  {
-    end: 70,
-    suffix: "%",
-    label: "% Average Grade Improvement",
-    format: "plain",
-  },
+const metrics = [
+  { value: "1M+", label: "Questions Solved" },
+  { value: "10X", label: "Exam Board Support" },
 ] as const;
 
 export function About() {
   return (
     <section id="about" className="py-20 sm:py-24">
-      <SectionReveal className="space-y-10">
-        <h2 className="text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
-          Built for UK Exam Boards. Powered by AI.
-        </h2>
-        <p className="max-w-5xl text-base leading-8 text-[#D2CFD7] sm:text-lg">
-          We built this because private tutoring costs £96/month. Every student
-          deserves expert-level feedback — not just those who can afford it. Our
-          AI understands AQA, Edexcel, OCR and WJEC marking schemes so your
-          practice actually prepares you for the real exam.
-        </p>
-        <div className="grid gap-4 md:grid-cols-3">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl border border-[#FFFFFF1C] bg-[#1E0E38]/70 p-6"
-            >
-              <p className="text-4xl font-semibold text-white sm:text-5xl">
-                <CountUp
-                  end={stat.end}
-                  suffix={stat.suffix}
-                  format={stat.format}
-                />
+      <SectionReveal>
+        <div className="grid items-center gap-8 lg:grid-cols-[0.92fr_1fr] lg:gap-14">
+          <div className="relative mx-auto w-full max-w-lg">
+            <div className="relative overflow-hidden rounded-[16px] border border-[#FFFFFF1C] bg-[#140A28] shadow-[0_20px_45px_rgba(0,0,0,0.32)]">
+              <Image
+                src="/about.png"
+                alt="About BoostTutorAI section visual"
+                width={400}
+                height={460}
+                className="h-[460px] w-full rounded-[16px] object-cover object-top"
+                priority={false}
+              />
+            </div>
+
+            <div className="pointer-events-none absolute top-5 -left-3 rounded-2xl bg-linear-to-br from-[#8F5BFF] to-[#6F35D8] px-5 py-4 shadow-[0_15px_35px_rgba(116,65,214,0.45)] sm:-left-6 sm:top-8">
+              <p className="text-2xl font-semibold tracking-wide text-white sm:text-3xl">
+                {metrics[0].value}
               </p>
-              <p className="mt-3 text-sm text-[#D2CFD7] sm:text-base">
-                {stat.label}
+              <p className="mt-1 text-xs font-medium tracking-[0.16em] text-[#EDE2FF] uppercase sm:text-sm">
+                {metrics[0].label}
               </p>
             </div>
-          ))}
+
+            <div className="pointer-events-none absolute right-3 bottom-5 rounded-2xl bg-linear-to-br from-[#8F5BFF] to-[#6F35D8] px-5 py-4 shadow-[0_15px_35px_rgba(116,65,214,0.45)] sm:-right-6 sm:bottom-8">
+              <p className="text-2xl font-semibold tracking-wide text-white sm:text-3xl">
+                {metrics[1].value}
+              </p>
+              <p className="mt-1 text-xs font-medium tracking-[0.16em] text-[#EDE2FF] uppercase sm:text-sm">
+                {metrics[1].label}
+              </p>
+            </div>
+          </div>
+
+          <div className="text-left">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+              About BoostTutorAI
+            </p>
+            <h2 className="mt-4 max-w-2xl text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
+              Master Any Exam Question in Seconds.
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#D2CFD7] sm:text-lg">
+              Traditional tutoring is slow and expensive. BoostTutorAI provides
+              instant stepby-step solutions for Maths, Physics, Biology, and
+              Chemistry aligned with UK exam boards.
+            </p>
+
+            <Button className="btn-primary-gradient mt-8 h-11 rounded-lg px-7 text-xs font-semibold tracking-[0.08em] uppercase sm:h-12">
+              See How it Works
+            </Button>
+          </div>
         </div>
       </SectionReveal>
     </section>
-  );
-}
-
-type CountUpProps = {
-  end: number;
-  suffix: string;
-  format: "plain" | "comma";
-};
-
-function CountUp({ end, suffix, format }: CountUpProps) {
-  const [value, setValue] = useState(0);
-  const [runId, setRunId] = useState(0);
-  const ref = useRef<HTMLSpanElement | null>(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) {
-          setValue(0);
-          setRunId((prev) => prev + 1);
-        }
-      },
-      { threshold: 0.4 }
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (runId === 0) return;
-
-    const duration = 2000;
-    const start = performance.now();
-    let animationFrame = 0;
-
-    const easeOutCubic = (t: number) => 1 - (1 - t) ** 3;
-
-    const tick = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = easeOutCubic(progress);
-      setValue(Math.round(eased * end));
-      if (progress < 1) {
-        animationFrame = window.requestAnimationFrame(tick);
-      }
-    };
-
-    animationFrame = window.requestAnimationFrame(tick);
-    return () => window.cancelAnimationFrame(animationFrame);
-  }, [end, runId]);
-
-  const text =
-    format === "comma" ? value.toLocaleString("en-GB") : value.toString();
-
-  return (
-    <span ref={ref}>
-      {text}
-      {suffix}
-    </span>
   );
 }

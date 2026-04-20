@@ -1,60 +1,78 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
-import { useState } from "react";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { SectionReveal } from "@/components/sections/SectionReveal";
 
-const VIDEO_ID = "M7lc1UVf-VE";
+const featurePoints = [
+  "24/7 Instant Access",
+  "Step-by-Step Logic",
+  "Verified Curriculum Accuracy",
+  "Unlimited Practice Variations",
+  "Cost-Effective Tutoring",
+  "Track Your Progress",
+];
 
 export function WhyStarted() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const leftFeaturePoints = featurePoints.slice(0, 3);
+  const rightFeaturePoints = featurePoints.slice(3);
 
   return (
     <section id="why-started" className="py-20 sm:py-24">
       <SectionReveal className="space-y-8">
-        <h2 className="text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl text-center">
-          Why we started Boost tutor ai
-        </h2>
-
-        <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-[#FFFFFF1C] bg-[#1E0E38]/70">
-          <div className="relative aspect-video w-full">
-            {!isPlaying ? (
-              <button
-                type="button"
-                onClick={() => setIsPlaying(true)}
-                className="group relative block h-full w-full"
-                aria-label="Play video"
-              >
-                {/* Use native img for remote YouTube thumbnail */}
+        <div className="mx-auto w-full max-w-8xl">
+          <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:items-center lg:gap-12">
+            <div className="overflow-hidden rounded-2xl border border-[#FFFFFF1C] bg-[#1E0E38]/60">
+              <div className="relative aspect-4/3 w-full">
                 <img
-                  src={`https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`}
-                  alt="Why we started Boost tutor ai video preview"
+                  src="https://kit.holylinedesign.com/cerdas/wp-content/uploads/sites/27/2025/03/young-serious-female-programmer-or-developer-in-fo-KG33VXG.jpg"
+                  alt="Student learning with BoostTutorAI"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-black/30 transition-colors duration-200 group-hover:bg-black/40" />
-                <span className="absolute inset-0 flex items-center justify-center">
-                  <span className="inline-flex size-20 items-center justify-center rounded-full border border-[#FFFFFF1C] bg-[#1D1629] shadow-[0_12px_36px_rgba(0,0,0,0.4)] transition-transform duration-200 group-hover:scale-105 cursor-pointer">
-                    <Image
-                      src="/logo.png"
-                      alt="BoostTutorAI logo"
-                      width={80}
-                      height={80}
-                    />
-                  </span>
-                </span>
-              </button>
-            ) : (
-              <iframe
-                className="h-full w-full"
-                src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0`}
-                title="Why we started Boost tutor ai"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            )}
+                <div className="absolute inset-0 bg-linear-to-r from-[#140A26]/20 via-transparent to-[#140A26]/25" />
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+                WHY BOOSTTUTORAI?
+              </p>
+              <h2 className="text-2xl leading-tight font-semibold text-white sm:text-3xl lg:text-4xl">
+                Your Private Tutor, Without the Price Tag or the Wait.
+              </h2>
+              <p className="text-sm leading-relaxed text-[#D2CFD7] sm:text-base">
+                Stop wasting hours staring at the same textbook. BoostTutorAI
+                provides personalized, 24/7 support that understands the UK
+                curriculum better than a standard textbook. We break down the
+                most complex exam questions into simple, logical steps-anytime,
+                anywhere.
+              </p>
+
+              <div className="grid gap-3 pt-1 sm:grid-cols-2 sm:gap-4">
+                <ul className="space-y-3">
+                  {leftFeaturePoints.map((point) => (
+                    <li key={point} className="flex items-start gap-3 text-[#D2CFD7]">
+                      <Check className="mt-0.5 size-4 shrink-0 text-[#CDF660]" />
+                      <span className="text-sm leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <ul className="space-y-3">
+                  {rightFeaturePoints.map((point) => (
+                    <li key={point} className="flex items-start gap-3 text-[#D2CFD7]">
+                      <Check className="mt-0.5 size-4 shrink-0 text-[#CDF660]" />
+                      <span className="text-sm leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <Button className="btn-primary-gradient mt-2 h-11 rounded-xl px-7 text-xs font-semibold tracking-[0.13em] uppercase">
+                Start Your Free Trial
+              </Button>
+            </div>
           </div>
         </div>
       </SectionReveal>

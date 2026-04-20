@@ -17,43 +17,43 @@ const items: {
   title: string;
   description: string;
 }[] = [
-  {
-    icon: FaPenNib,
-    title: "Exam-Style Questions",
-    description:
-      "Practice questions that mirror real past papers, matched to your exam board style and mark scheme.",
-  },
-  {
-    icon: FaCheckCircle,
-    title: "Instant AI Marking",
-    description:
-      "Get your answers marked instantly using the same standards as real GCSE and A-Level examiners.",
-  },
-  {
-    icon: FaFileAlt,
-    title: "Essay Feedback",
-    description:
-      "Write full essays and receive detailed feedback based on your syllabus assessment objectives.",
-  },
-  {
-    icon: FaClock,
-    title: "Mock Exams",
-    description:
-      "Full timed papers with real grade boundaries and a results day — as close to exam day as it gets.",
-  },
-  {
-    icon: FaComments,
-    title: "AI Tutor Chat",
-    description:
-      "Ask anything. Get guided to the answer — not just given it. Learn faster, remember longer.",
-  },
-  {
-    icon: FaBullseye,
-    title: "Adaptive Practice",
-    description:
-      "The app identifies your weak spots and automatically targets them so you improve where it matters most.",
-  },
-];
+    {
+      icon: FaPenNib,
+      title: "Exam-Style Questions",
+      description:
+        "Practice questions that mirror real past papers, matched to your exam board style and mark scheme.",
+    },
+    {
+      icon: FaCheckCircle,
+      title: "Instant AI Marking",
+      description:
+        "Get your answers marked instantly using the same standards as real GCSE and A-Level examiners.",
+    },
+    {
+      icon: FaFileAlt,
+      title: "Essay Feedback",
+      description:
+        "Write full essays and receive detailed feedback based on your syllabus assessment objectives.",
+    },
+    {
+      icon: FaClock,
+      title: "Mock Exams",
+      description:
+        "Full timed papers with real grade boundaries and a results day — as close to exam day as it gets.",
+    },
+    {
+      icon: FaComments,
+      title: "AI Tutor Chat",
+      description:
+        "Ask anything. Get guided to the answer — not just given it. Learn faster, remember longer.",
+    },
+    {
+      icon: FaBullseye,
+      title: "Adaptive Practice",
+      description:
+        "The app identifies your weak spots and automatically targets them so you improve where it matters most.",
+    },
+  ];
 
 export function Features() {
   return (

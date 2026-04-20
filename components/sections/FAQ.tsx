@@ -10,56 +10,64 @@ import { SectionReveal } from "@/components/sections/SectionReveal";
 
 const topics = [
   {
-    question: "Is the content specific to my exam board?",
+    question: "How accurate are the AI solutions?",
     answer:
-      "Yes. Every question, note, and mark scheme is aligned to AQA, Edexcel, OCR and WJEC specifications. Nothing generic.",
+      "We use specialized models trained specifically on academic curricula. Each step-by-step solution is generated to mirror the mark schemes of major UK exam boards. However, as with any AI tool, we recommend using it to verify your own understanding rather than copying answers blindly.",
   },
   {
-    question: "How does the AI mark my answers?",
+    question: "Which exam boards do you support?",
     answer:
-      "Our AI uses official mark schemes and assessment objectives — the exact same standards your real examiner uses to grade your paper.",
+      "We currently support AQA, Edexcel, OCR, WJEC, and CCEA. We are constantly expanding our database. If you have a specific requirement, let us know through the Contact page, and we will prioritize it!",
   },
   {
-    question: "Can I try it without paying?",
+    question: "Is using BoostTutorAI considered cheating?",
     answer:
-      "Absolutely. No credit card needed. Sign up free and upgrade only when you are ready.",
+      "Not if used correctly. We do not just give you the final answer; we provide the process. Think of us as your 24/7 personal tutor. Use BoostTutorAI to break down roadblocks during your revision, not during your actual exam.",
   },
   {
-    question: "Does it cover both GCSE and A-Level?",
+    question: "Can I cancel my subscription anytime?",
     answer:
-      "Yes. We cover both levels across all major subjects including Maths, Sciences, Humanities and more.",
+      "Yes, absolutely. We believe in our product, not in locking you into contracts. You can cancel your monthly or annual subscription directly from your dashboard settings, and you will retain access until the end of your billing cycle.",
   },
   {
-    question: "What if I cannot afford the subscription?",
+    question: "What subjects do you currently offer?",
     answer:
-      "We run a bursary scheme. Apply and if you qualify you get full free access. No one should be blocked from good education.",
-  },
-  {
-    question: "How is this different from just using ChatGPT?",
-    answer:
-      "ChatGPT does not know your mark scheme. We do. Every question and every mark is built specifically around your exam board — ChatGPT is not.",
+      "Currently, we specialize in high-demand STEM subjects: Mathematics, Physics, Chemistry, and Biology. We are rolling out support for more subjects soon-stay tuned!",
   },
 ];
 
 export function FAQ() {
   return (
     <section id="faq" className="py-20 sm:py-24">
-      <SectionReveal className="space-y-10">
-        <h2 className="text-center text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
-          Questions? Answered.
-        </h2>
-        <div className="rounded-2xl border border-[#FFFFFF1C] bg-[#1E0E38]/70 p-4 sm:p-6">
-          <Accordion defaultValue={[topics[0].question]}>
+      <SectionReveal className="space-y-8">
+        <div className="space-y-3">
+          <p className="text-xs font-semibold tracking-[0.2em] text-[#CDF660] uppercase sm:text-sm">
+            Have Questions?
+          </p>
+          <h2 className="text-2xl leading-tight font-semibold text-white sm:text-3xl lg:text-4xl">
+            Frequently Asked Questions
+          </h2>
+        </div>
+        <div className="mx-auto w-full">
+          <Accordion defaultValue={[topics[0].question]} className="space-y-4">
             {topics.map((topic) => (
               <AccordionItem
                 key={topic.question}
                 value={topic.question}
-                className="border-[#FFFFFF1C]"
+                className="overflow-hidden rounded-xl border-0 bg-[#241045]/85"
               >
-                <AccordionTrigger className="px-2 py-4 text-base font-semibold text-white hover:no-underline">
-                  {topic.question}
+                <AccordionTrigger className="px-6 py-5 text-base font-semibold text-white hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden group-aria-expanded/accordion-trigger:bg-[#C6EC63] group-aria-expanded/accordion-trigger:text-[#170C2D]">
+                  <span className="flex w-full items-center justify-between gap-4">
+                    <span>{topic.question}</span>
+                    <span className="text-3xl leading-none group-aria-expanded/accordion-trigger:hidden">
+                      +
+                    </span>
+                    <span className="hidden text-3xl leading-none group-aria-expanded/accordion-trigger:inline">
+                      -
+                    </span>
+                  </span>
                 </AccordionTrigger>
-                <AccordionContent className="px-2 pb-5 text-sm text-[#D2CFD7]">
+                <AccordionContent className="border-t border-[#FFFFFF14] bg-[#2A1450] px-6 pb-6 text-base leading-relaxed text-[#D2CFD7]">
                   {topic.answer}
                 </AccordionContent>
               </AccordionItem>

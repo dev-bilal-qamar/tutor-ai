@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -32,6 +31,24 @@ const initialQuestions: MathQuestion[] = [
     acceptedAnswers: ["y=21", "21"],
   },
 ];
+
+const rightSideBadges = [
+  "AQA & Edexcel Verified",
+  "Unlimited Variations",
+  "10X Faster Outcomes",
+] as const;
+
+const leftBottomCards = [
+  {
+    title: "Trust Block",
+    description: "50k+ Questions Solved",
+  },
+  {
+    title: "AI Tutor Block",
+    description: "Your Dedicated AI Tutor",
+    helperText: "Focus on understanding, not just answers.",
+  },
+] as const;
 
 const randomInt = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -118,34 +135,46 @@ export function Hero() {
         transition={{ duration: 0.65, ease: "easeOut" }}
         className="bg-accent-gradient px-5 pt-8 pb-12 sm:px-8 sm:pt-10 sm:pb-14 lg:pt-12 lg:pb-16"
       >
-        <div className="mx-auto grid w-full max-w-[1280px] items-center gap-8 lg:grid-cols-[1fr_1.05fr] lg:gap-10 lg:px-4">
+        <div className="mx-auto grid w-full max-w-[1280px] items-center gap-8 lg:grid-cols-[1fr_0.9fr] lg:gap-10 lg:px-4">
           <div className="text-left">
-            <p className="inline-flex rounded-full border border-[#FFFFFF1C] bg-[#1E0E38]/80 px-4 py-2 text-xs font-medium text-[#D2CFD7] sm:text-sm">
-              🎓 Trusted by 10,000+ UK Students
+            <p className="inline-flex rounded-full border border-[#FFFFFF1C] bg-[#1E0E38]/80 px-4 py-2 text-xs font-medium tracking-widest text-[#D2CFD7] uppercase sm:text-sm">
+              AI Exam Prep System
             </p>
-            <h1 className="mt-6 max-w-xl text-4xl leading-tight font-semibold text-white sm:text-5xl lg:text-6xl">
-              The Smartest Way to Ace Your GCSEs &amp; A-Levels
+            <h1 className="mt-6 max-w-xl text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
+              Master Your Exams. Solved in Seconds.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-8 text-[#D2CFD7] sm:text-lg">
-              AI-powered practice questions, instant marking, and personalised
-              feedback — built around your exact exam board.
+              Instant, verified solutions for AQA, Edexcel, and more. Upload your
+              problem and get immediate working, detailed explanations, and
+              unlimited AI-generated variants.
             </p>
-            <div className="mt-8 grid max-w-md gap-3 sm:grid-cols-2">
-              <Button className="btn-primary-gradient h-12 w-full rounded-xl text-xs font-semibold tracking-[0.13em] uppercase">
-                Start for Free
-              </Button>
-              <Button
-                variant="ghost"
-                className="h-12 w-full rounded-xl border border-[#FFFFFF1C] bg-[#1E0E38]/60 text-xs font-semibold tracking-[0.13em] uppercase text-white transition-colors duration-200 hover:bg-[#28124A] hover:text-white"
-              >
-                <Link href="#how-it-works">See How It Works</Link>
+            <div className="mt-8 max-w-md">
+              <Button className="btn-primary-gradient h-12 w-full rounded-lg px-8 text-xs font-semibold tracking-[0.08em] uppercase shadow-[0_12px_30px_rgba(139,92,214,0.35)] sm:w-auto whitespace-nowrap">
+                Get Your First Answer Free
               </Button>
             </div>
-            <p className="mt-4 text-sm text-[#8E869B]">
-              No credit card required · Free to start · Cancel anytime
-            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {leftBottomCards.map((card) => (
+                <div
+                  key={card.title}
+                  className="rounded-2xl border border-[#FFFFFF1C] bg-[#1E0E38]/65 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.24)]"
+                >
+                  <p className="text-xs font-semibold tracking-[0.08em] text-[#CDF660] uppercase">
+                    {card.title}
+                  </p>
+                  <p className="mt-2 text-base font-semibold text-white sm:text-lg">
+                    {card.description}
+                  </p>
+                  {"helperText" in card ? (
+                    <p className="mt-2 text-sm leading-6 text-[#D2CFD7]">
+                      {card.helperText}
+                    </p>
+                  ) : null}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="mx-auto w-full max-w-xl">
+          <div className="mx-auto w-full max-w-lg">
             <div className="rounded-2xl border border-[#FFFFFF1C] bg-[#120824] p-4 shadow-[0_18px_48px_rgba(0,0,0,0.28)] sm:p-5">
               <div className="rounded-xl border border-[#FFFFFF1C] bg-white p-4 text-[#111827] sm:p-5">
                 <div className="flex items-center justify-between">
@@ -182,11 +211,10 @@ export function Hero() {
                         </p>
                       ) : checkResults[index] !== null ? (
                         <p
-                          className={`mt-2 rounded-md px-3 py-1.5 text-xs font-semibold ${
-                            checkResults[index]
-                              ? "bg-[#ECFDF3] text-[#065F46]"
-                              : "bg-[#FEF2F2] text-[#991B1B]"
-                          }`}
+                          className={`mt-2 rounded-md px-3 py-1.5 text-xs font-semibold ${checkResults[index]
+                            ? "bg-[#ECFDF3] text-[#065F46]"
+                            : "bg-[#FEF2F2] text-[#991B1B]"
+                            }`}
                         >
                           {checkResults[index]
                             ? "Correct answer"
