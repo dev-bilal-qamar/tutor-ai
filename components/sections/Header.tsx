@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import type { MouseEvent } from "react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -54,6 +55,25 @@ export function Header() {
       activeId === id ? "text-white" : "text-[#D2CFD7] hover:text-white"
     }`;
 
+  const handleSectionClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    id: string,
+  ) => {
+    event.preventDefault();
+    if (id === "hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveId("hero");
+      setMenuOpen(false);
+      return;
+    }
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveId(id);
+    }
+    setMenuOpen(false);
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 border-b transition-all duration-200 ${
@@ -63,7 +83,11 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 py-4">
-        <Link href="#hero" className="flex items-center gap-1">
+        <Link
+          href="#hero"
+          onClick={(event) => handleSectionClick(event, "hero")}
+          className="flex items-center gap-1"
+        >
           <Image src="/logo.png" alt="App logo" width={60} height={60} />
           <p className="font-heading text-base font-semibold sm:text-lg">
             Boost TutorAI
@@ -72,7 +96,12 @@ export function Header() {
 
         <nav className="hidden items-center gap-7 lg:flex">
           {navItems.map((item) => (
-            <Link key={item.id} href={item.href} className={navClass(item.id)}>
+            <Link
+              key={item.id}
+              href={item.href}
+              onClick={(event) => handleSectionClick(event, item.id)}
+              className={navClass(item.id)}
+            >
               {item.label}
               <span
                 className={`absolute bottom-0 left-0 h-0.5 w-full origin-left rounded-full bg-[#8B5CD6] transition-transform duration-200 ${
@@ -115,7 +144,7 @@ export function Header() {
             <Link
               key={item.id}
               href={item.href}
-              onClick={() => setMenuOpen(false)}
+              onClick={(event) => handleSectionClick(event, item.id)}
               className={`rounded-xl px-3 py-2.5 text-sm transition-colors duration-200 ${
                 activeId === item.id
                   ? "bg-[#1E0E38] text-white"
